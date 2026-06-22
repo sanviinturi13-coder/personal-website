@@ -1045,55 +1045,188 @@ color:white;
 
 }
 
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media (max-width: 768px) {
 
-  gap: 16px;
+  /* ===================== */
+  /* GLOBAL FIX            */
+  /* ===================== */
 
-  padding: 18px 16px 40px 16px;
-}
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
 
-.about-card {
-  width: 100%;
-  max-width: 360px;
+  header {
+    padding: 16px 18px;
+  }
 
-  display: flex;
-  flex-direction: column;
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
 
-  background: transparent;
+  nav a {
+    font-size: 15px;
+  }
 
-  overflow: hidden;
+  /* ===================== */
+  /* HOME PAGE             */
+  /* ===================== */
 
-  /* IMPORTANT FIXES */
-  min-width: 0;
-  flex-shrink: 0;
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 16px 40px 16px;
+    height: auto;
+    gap: 16px;
+  }
 
-  position: relative !important;
+  .left-side h1 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
 
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
+  .left-side p {
+    font-size: 14px;
+    margin-top: 6px;
+  }
 
-.about-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
+  .contact-info {
+    justify-content: center;
+    margin-top: 12px;
+  }
 
-.about-card h2 {
-  font-size: 18px;
-  margin-top: 10px;
-}
+  .right-side img {
+    width: 250px;
+    height: 250px;
+  }
 
-.about-card p {
-  font-size: 13px;
-  line-height: 1.4;
+  .right-side::before {
+    width: 270px;
+    height: 270px;
+  }
 
-  /* CRITICAL FIX: prevents overflow pushing layout */
-  overflow-wrap: break-word;
-  word-break: normal;
+  /* ===================== */
+  /* TITLES                */
+  /* ===================== */
+
+  .page-title,
+  .about-title,
+  .research-title,
+  .misc-title {
+    font-size: 22px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* ===================== */
+  /* ABOUT PAGE (FIXED)    */
+  /* ===================== */
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 16px 40px 16px;
+    align-items: center;
+  }
+
+  .about-card {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative !important;
+
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+
+    overflow: hidden;
+  }
+
+  .about-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+  }
+
+  .about-card h2 {
+    font-size: 17px;
+    margin-top: 8px;
+  }
+
+  .about-card p {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  /* ===================== */
+  /* RESEARCH              */
+  /* ===================== */
+
+  .research-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0 14px;
+  }
+
+  .interest-card {
+    height: auto;
+  }
+
+  /* ===================== */
+  /* BLOG                  */
+  /* ===================== */
+
+  .blog-post {
+    width: 92%;
+  }
+
+  /* ===================== */
+  /* MISC (BOOK FIXED)     */
+  /* ===================== */
+
+  .book-wrapper {
+    min-height: 100vh;
+    padding: 30px 0;
+  }
+
+  .book-cover {
+    width: 180px;
+    height: 270px;
+  }
+
+  #openBook:checked ~ .notebook {
+    width: 95%;
+    max-width: 340px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-page,
+  .right-page {
+    width: 100%;
+    height: auto;
+
+    padding: 16px;
+
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+
+  .fact h3 {
+    font-size: 15px;
+  }
+
+  .fact p {
+    font-size: 13px;
+  }
+
 }
