@@ -1,3 +1,7 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 *{
     margin:0;
@@ -1043,32 +1047,40 @@ color:white;
 
 @media (max-width: 768px) {
 
-  /* GENERAL TEXT SCALING */
+  /* ===================== */
+  /* GLOBAL MOBILE SCALE   */
+  /* ===================== */
+
   body {
     overflow-x: hidden;
   }
 
-  /* NAVIGATION */
   header {
-    padding: 20px;
+    padding: 18px 20px;
   }
 
   nav {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
   }
 
   nav a {
-    font-size: 18px;
+    font-size: 16px;
   }
 
-  /* HERO (HOME PAGE) */
+  /* ===================== */
+  /* HERO (CLEAN REDESIGN) */
+  /* ===================== */
+
   .hero {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 40px 20px;
     height: auto;
+    padding: 40px 20px;
+    gap: 25px;
   }
 
   .left-side {
@@ -1076,70 +1088,103 @@ color:white;
   }
 
   .left-side h1 {
-    font-size: 48px;
-    letter-spacing: 3px;
+    font-size: 42px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    word-break: break-word;
   }
 
   .left-side p {
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 10px;
   }
 
+  /* center image + glow */
   .right-side {
-    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .right-side img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .right-side::before {
     width: 240px;
     height: 240px;
   }
 
-  .right-side::before {
-    width: 260px;
-    height: 260px;
+  /* email under name stays clean */
+  .contact-info {
+    justify-content: center;
+    margin-top: 18px;
   }
 
-  /* PAGE TITLES */
+  .contact-info a {
+    font-size: 16px;
+  }
+
+  /* ===================== */
+  /* PAGE TITLES           */
+  /* ===================== */
+
   .page-title,
   .about-title,
   .research-title {
-    font-size: 32px;
-    margin-top: 30px;
+    font-size: 30px;
   }
 
-  /* CARDS (ABOUT PAGE FIX) */
+  /* ===================== */
+  /* ABOUT CARDS FIX       */
+  /* ===================== */
+
   .about-container {
     height: auto;
-    padding: 40px 0;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .about-card {
     position: relative;
-    width: 85%;
-    margin: 20px auto;
-    transform: rotate(0deg) !important;
+    width: 88%;
+    max-width: 340px;
+    transform: none !important;
+    animation: none;
+    margin-bottom: 20px;
   }
 
-  /* RESEARCH GRID */
+  /* ===================== */
+  /* RESEARCH              */
+  /* ===================== */
+
   .research-container {
     grid-template-columns: 1fr;
-    gap: 20px;
     padding: 0 20px;
   }
 
   .interest-card {
-    width: 100%;
     height: auto;
   }
 
-  /* BLOG */
+  /* ===================== */
+  /* BLOG                  */
+  /* ===================== */
+
   .blog-post {
     width: 90%;
   }
 
-  /* MISC GRID */
+  /* ===================== */
+  /* MISC GRID             */
+  /* ===================== */
+
   .moodboard {
-    grid-template-columns: repeat(2, 140px);
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15px;
   }
 
   .moodbox {
@@ -1150,29 +1195,26 @@ color:white;
     height: 200px;
   }
 
-  .wide {
-    width: 100%;
-  }
+  /* ===================== */
+  /* BOOK FIX (IMPORTANT)  */
+  /* ===================== */
 
-  /* JOURNAL */
-  .journal {
-    width: 90%;
-  }
-
-  /* BOOK PAGE */
   .book-wrapper {
+    min-height: 100vh;
     height: auto;
-    padding: 40px 0;
+    padding: 60px 0;
   }
 
   .book-cover {
-    width: 220px;
-    height: 320px;
+    width: 200px;
+    height: 300px;
   }
 
   #openBook:checked ~ .notebook {
-    width: 95%;
+    width: 92%;
+    max-width: 360px;
     flex-direction: column;
+    align-items: center;
   }
 
   .left-page,
