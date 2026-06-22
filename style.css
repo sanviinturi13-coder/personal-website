@@ -1140,10 +1140,14 @@ color:white;
 
   @media (max-width: 768px) {
 
-  /* ABOUT SCROLL CONTAINER */
+  /* ===================== */
+  /* ABOUT WRAPPER FIX     */
+  /* ===================== */
+
   .about-container {
     height: auto;
-    padding: 40px 20px 70px 20px; /* moved slightly up + space for arrow */
+    padding: 20px 20px 60px 20px; /* closer to heading */
+    margin-top: 10px;
 
     display: flex;
     flex-direction: row;
@@ -1156,42 +1160,47 @@ color:white;
     -webkit-overflow-scrolling: touch;
 
     align-items: flex-start;
+
+    position: relative;
   }
 
-  /* ALL CARDS SAME HEIGHT */
+  /* ===================== */
+  /* CARDS ALIGNMENT FIX   */
+  /* ===================== */
+
   .about-card {
-    position: relative !important;
     flex: 0 0 85%;
     max-width: 340px;
 
-    height: 480px;              /* 🔥 FORCE SAME HEIGHT */
-    overflow: hidden;
+    height: 460px;              /* same height for ALL cards */
+    margin-top: 0;              /* 🔥 removes vertical drifting */
+
+    position: relative !important;
 
     opacity: 1 !important;
-    visibility: visible !important;
-
     transform: none !important;
     animation: none !important;
 
     scroll-snap-align: center;
 
-    z-index: 2;
-
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+
+    overflow: hidden;
   }
 
-  /* IMAGE FIX */
+  /* IMAGE UNIFORMITY */
   .about-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    display: block;
   }
 
-  /* TEXT AREA CONSISTENCY */
+  /* TEXT TIGHTER */
   .about-card h2 {
     font-size: 22px;
+    margin-top: 10px;
   }
 
   .about-card p {
@@ -1200,28 +1209,42 @@ color:white;
   }
 
   /* ===================== */
-  /* SWIPE INDICATOR ARROW */
+  /* SWIPE INDICATOR (CUTE + CLEAR) */
   /* ===================== */
 
-  .about-container::after {
-    content: "→ swipe";
+  .about-container::before {
+    content: "swipe →";
     position: absolute;
-    right: 18px;
-    bottom: 18px;
+    top: -18px;   /* 🔥 closer to heading */
 
-    font-size: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 13px;
     color: rgba(255,255,255,0.75);
     letter-spacing: 1px;
 
     background: rgba(0,0,0,0.25);
-    padding: 6px 10px;
-    border-radius: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
 
     pointer-events: none;
   }
 
-}
+  /* subtle fade hint on right side (UX cue) */
+  .about-container::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
 
+    background: linear-gradient(to left, rgba(0,0,0,0.15), transparent);
+
+    pointer-events: none;
+  }
+}
   /* ===================== */
   /* RESEARCH              */
   /* ===================== */
