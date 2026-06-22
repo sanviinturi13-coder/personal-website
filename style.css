@@ -1142,33 +1142,36 @@ margin-top:30px;
   /* ===================== */
   /* TITLES                */
   /* ===================== */
+/* ===================== */
+/* TITLES                */
+/* ===================== */
 
-  .page-title,
-  .about-title,
-  .research-title,
-  .misc-title {
-    font-size: 22px;
-    margin-top: 16px;
-    text-align: center;
-  }
+.page-title,
+.about-title,
+.research-title,
+.misc-title {
+  font-size: 22px;
+  margin-top: 16px;
+  text-align: center;
+}
 
-  /* SWIPE TEXT */
+/* add this RIGHT HERE */
 
-  .about-title::after {
-    content: "⟶ Swipe";
+.about-title::after{
+  content:"⟶ Swipe";
 
-    display: block;
+  display:block;
 
-    color: white;
+  color:white;
 
-    font-size: 16px;
+  font-size:16px;
 
-    margin-top: 10px;
+  margin-top:10px;
 
-    opacity: 0.8;
+  opacity:0.8;
 
-    letter-spacing: 1px;
-  }
+  letter-spacing:1px;
+}
 
   /* ===================== */
   /* ABOUT PAGE            */
