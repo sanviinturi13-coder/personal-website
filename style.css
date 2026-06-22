@@ -1251,6 +1251,22 @@ color:white;
   margin:0;
 }
 
+.about-title::after{
+  content:"→ Swipe";
+
+  display:block;
+
+  color:white;
+
+  font-size:16px;
+
+  font-weight:400;
+
+  margin-top:10px;
+
+  opacity:0.8;
+}
+
   /* ===================== */
   /* RESEARCH              */
   /* ===================== */
