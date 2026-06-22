@@ -1140,10 +1140,10 @@ color:white;
 
   @media (max-width: 768px) {
 
-  /* ABOUT CONTAINER FIX */
+  /* ABOUT SCROLL CONTAINER */
   .about-container {
     height: auto;
-    padding: 60px 20px;
+    padding: 40px 20px 70px 20px; /* moved slightly up + space for arrow */
 
     display: flex;
     flex-direction: row;
@@ -1155,16 +1155,17 @@ color:white;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 
-    align-items: center;
+    align-items: flex-start;
   }
 
-  /* RESTORE CARD VISIBILITY */
+  /* ALL CARDS SAME HEIGHT */
   .about-card {
     position: relative !important;
-    display: block !important;
-
     flex: 0 0 85%;
     max-width: 340px;
+
+    height: 480px;              /* 🔥 FORCE SAME HEIGHT */
+    overflow: hidden;
 
     opacity: 1 !important;
     visibility: visible !important;
@@ -1175,16 +1176,48 @@ color:white;
     scroll-snap-align: center;
 
     z-index: 2;
+
+    display: flex;
+    flex-direction: column;
   }
 
-  /* IMAGE FIX (THIS IS LIKELY WHY YOU SAW “NO PICS”) */
+  /* IMAGE FIX */
   .about-card img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
-
     display: block;
-    opacity: 1 !important;
+  }
+
+  /* TEXT AREA CONSISTENCY */
+  .about-card h2 {
+    font-size: 22px;
+  }
+
+  .about-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ===================== */
+  /* SWIPE INDICATOR ARROW */
+  /* ===================== */
+
+  .about-container::after {
+    content: "→ swipe";
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 1px;
+
+    background: rgba(0,0,0,0.25);
+    padding: 6px 10px;
+    border-radius: 10px;
+
+    pointer-events: none;
   }
 
 }
