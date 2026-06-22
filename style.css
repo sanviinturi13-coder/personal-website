@@ -1048,11 +1048,12 @@ color:white;
 @media (max-width: 768px) {
 
   /* ===================== */
-  /* GLOBAL MOBILE SCALE   */
+  /* GLOBAL FIXES          */
   /* ===================== */
 
-  body {
+  html, body {
     overflow-x: hidden;
+    width: 100%;
   }
 
   header {
@@ -1070,7 +1071,7 @@ color:white;
   }
 
   /* ===================== */
-  /* HERO (CLEAN REDESIGN) */
+  /* HERO (HOME PAGE)      */
   /* ===================== */
 
   .hero {
@@ -1078,9 +1079,9 @@ color:white;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: auto;
     padding: 40px 20px;
-    gap: 25px;
+    height: auto;
+    gap: 22px;
   }
 
   .left-side {
@@ -1090,8 +1091,7 @@ color:white;
   .left-side h1 {
     font-size: 42px;
     letter-spacing: 2px;
-    line-height: 1.1;
-    word-break: break-word;
+    line-height: 1.05;
   }
 
   .left-side p {
@@ -1099,13 +1099,21 @@ color:white;
     margin-top: 10px;
   }
 
-  /* center image + glow */
-  .right-side {
+  /* EMAIL CENTER FIX */
+  .contact-info {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 18px;
   }
 
+  .contact-info a {
+    font-size: 15px;
+  }
+
+  /* IMAGE */
   .right-side img {
     width: 220px;
     height: 220px;
@@ -1116,45 +1124,58 @@ color:white;
     height: 240px;
   }
 
-  /* email under name stays clean */
-  .contact-info {
-    justify-content: center;
-    margin-top: 18px;
-  }
-
-  .contact-info a {
-    font-size: 16px;
-  }
-
   /* ===================== */
-  /* PAGE TITLES           */
+  /* TITLES                */
   /* ===================== */
 
   .page-title,
   .about-title,
   .research-title {
     font-size: 30px;
+    margin-top: 30px;
   }
 
   /* ===================== */
-  /* ABOUT CARDS FIX       */
+  /* ABOUT (STACK CARDS)   */
   /* ===================== */
 
   .about-container {
     height: auto;
-    padding: 50px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 60px 0;
+    position: relative;
   }
 
   .about-card {
-    position: relative;
+    position: absolute;
     width: 88%;
     max-width: 340px;
-    transform: none !important;
+    opacity: 0;
+    transform: scale(0.92);
+    transition: all 0.4s ease;
     animation: none;
-    margin-bottom: 20px;
+  }
+
+  .about-card.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 5;
+  }
+
+  /* arrows */
+  .about-nav {
+    position: absolute;
+    bottom: -60px;
+    display: flex;
+    gap: 25px;
+  }
+
+  .about-nav button {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    font-size: 18px;
+    padding: 10px 14px;
+    border-radius: 12px;
   }
 
   /* ===================== */
@@ -1164,6 +1185,7 @@ color:white;
   .research-container {
     grid-template-columns: 1fr;
     padding: 0 20px;
+    gap: 20px;
   }
 
   .interest-card {
@@ -1179,30 +1201,43 @@ color:white;
   }
 
   /* ===================== */
-  /* MISC GRID             */
+  /* MISC (LIST STYLE)     */
   /* ===================== */
 
   .moodboard {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
   }
 
   .moodbox {
-    height: 140px;
+    width: 90%;
+    max-width: 320px;
+    height: 120px;
+    border-radius: 16px;
   }
 
   .tall {
-    height: 200px;
+    height: 160px;
+  }
+
+  .wide {
+    width: 90%;
   }
 
   /* ===================== */
-  /* BOOK FIX (IMPORTANT)  */
+  /* BOOK (NO OVERFLOW)    */
   /* ===================== */
 
   .book-wrapper {
     min-height: 100vh;
     height: auto;
     padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .book-cover {
