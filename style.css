@@ -1048,7 +1048,7 @@ color:white;
 @media (max-width: 768px) {
 
   /* ===================== */
-  /* GLOBAL RESET          */
+  /* GLOBAL                */
   /* ===================== */
 
   html, body {
@@ -1063,11 +1063,11 @@ color:white;
   nav {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   nav a {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   /* ===================== */
@@ -1077,160 +1077,75 @@ color:white;
   .hero {
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-
     text-align: center;
 
-    padding: 28px 18px 40px 18px;
+    padding: 25px 16px 40px 16px;
     height: auto;
-    gap: 18px;
-  }
-
-  .left-side {
-    width: 100%;
+    gap: 16px;
   }
 
   .left-side h1 {
-    font-size: 40px;
-    line-height: 1.05;
-    letter-spacing: 2px;
+    font-size: 38px;
   }
 
   .left-side p {
-    font-size: 15px;
-    margin-top: 8px;
-  }
-
-  .contact-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    margin-top: 14px;
-  }
-
-  .contact-info a {
     font-size: 14px;
   }
 
-  /* 📌 bigger image (your request) */
+  .contact-info {
+    justify-content: center;
+  }
+
   .right-side img {
-    width: 270px;
-    height: 270px;
-  }
-
-  .right-side::before {
-    width: 290px;
-    height: 290px;
+    width: 260px;
+    height: 260px;
   }
 
   /* ===================== */
-  /* TITLES                */
-  /* ===================== */
-
-  .page-title,
-  .about-title,
-  .research-title {
-    font-size: 28px;
-    margin-top: 20px;
-  }
-
-  /* ===================== */
-  /* ABOUT (FIXED SWIPE UI)*/
+  /* ABOUT (4 CARD GRID)   */
   /* ===================== */
 
   .about-container {
-    position: relative;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    padding: 20px 16px 40px 16px;
+    margin-top: 10px;
 
     height: auto;
-    padding: 8px 16px 60px 16px;
-    margin-top: 0;
-
-    display: flex;
-    flex-direction: row;
-    gap: 14px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-
-    align-items: flex-start;
-  }
-
-  /* swipe indicator (VISIBLE + BIGGER) */
-  .about-container::before {
-    content: "← swipe →";
-
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    font-size: 15px;
-    font-weight: 500;
-
-    color: rgba(255,255,255,0.9);
-
-    background: rgba(0,0,0,0.35);
-    padding: 6px 14px;
-    border-radius: 999px;
-
-    z-index: 9999;
-    pointer-events: none;
   }
 
   .about-card {
-    flex: 0 0 82%;
-    max-width: 300px;
-
-    height: 400px;
-
     position: relative !important;
+
+    width: 100%;
+    height: 240px;   /* smaller uniform cards */
 
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
 
-    scroll-snap-align: center;
-
-    overflow: hidden;
-
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .about-card img {
-    height: 150px;
+    height: 110px;
     width: 100%;
     object-fit: cover;
   }
 
   .about-card h2 {
-    font-size: 20px;
-    margin-top: 8px;
+    font-size: 16px;
+    margin-top: 6px;
   }
 
   .about-card p {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  /* fade hint */
-  .about-container::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    width: 35px;
-    height: 100%;
-
-    background: linear-gradient(to left, rgba(0,0,0,0.25), transparent);
-
-    pointer-events: none;
+    font-size: 12px;
+    line-height: 1.3;
   }
 
   /* ===================== */
@@ -1239,8 +1154,8 @@ color:white;
 
   .research-container {
     grid-template-columns: 1fr;
-    padding: 0 16px;
-    gap: 16px;
+    gap: 14px;
+    padding: 0 14px;
   }
 
   .interest-card {
@@ -1256,20 +1171,16 @@ color:white;
   }
 
   /* ===================== */
-  /* MISC / BOOK           */
+  /* MISC BOOK (FIXED)     */
   /* ===================== */
 
   .book-wrapper {
-    min-height: 100vh;
     padding: 30px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .book-cover {
     width: 190px;
-    height: 290px;
+    height: 280px;
   }
 
   #openBook:checked ~ .notebook {
@@ -1277,19 +1188,28 @@ color:white;
     max-width: 340px;
 
     flex-direction: column;
-    align-items: center;
   }
 
+  /* 🔥 UNIFORM CURVED RECTANGLE PAGES */
   .left-page,
   .right-page {
     width: 100%;
     height: auto;
 
     padding: 16px;
+
+    border-radius: 18px;  /* same everywhere */
+    border-right: none;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+
+  .left-page {
+    margin-bottom: 12px;
   }
 
   .fact h3 {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .fact p {
