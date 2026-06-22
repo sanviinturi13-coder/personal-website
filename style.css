@@ -1046,6 +1046,15 @@ color:white;
 }
 @media (max-width: 768px) {
 
+  .about-swipe-arrow {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  opacity: 0.7;
+  letter-spacing: 1px;
+  animation: swipeHint 1.6s infinite ease-in-out;
+}
   /* ===================== */
   /* GLOBAL FIX            */
   /* ===================== */
