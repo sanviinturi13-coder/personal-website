@@ -1044,7 +1044,6 @@ transition:.3s ease;
 color:white;
 
 }
-
 @media (max-width: 768px) {
 
   /* ===================== */
@@ -1078,17 +1077,15 @@ color:white;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     text-align: center;
-
     padding: 28px 16px 40px 16px;
     height: auto;
     gap: 16px;
   }
 
   .left-side h1 {
-    font-size: 38px;
-    line-height: 1.05;
+    font-size: 36px;
+    line-height: 1.1;
   }
 
   .left-side p {
@@ -1102,13 +1099,13 @@ color:white;
   }
 
   .right-side img {
-    width: 260px;
-    height: 260px;
+    width: 250px;
+    height: 250px;
   }
 
   .right-side::before {
-    width: 280px;
-    height: 280px;
+    width: 270px;
+    height: 270px;
   }
 
   /* ===================== */
@@ -1117,9 +1114,11 @@ color:white;
 
   .page-title,
   .about-title,
-  .research-title {
-    font-size: 26px;
-    margin-top: 18px;
+  .research-title,
+  .misc-title {
+    font-size: 22px;
+    margin-top: 16px;
+    text-align: center;
   }
 
   /* ===================== */
@@ -1128,28 +1127,21 @@ color:white;
 
   .about-container {
     display: flex;
-    flex-direction: row;
-
-    gap: 12px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
+    flex-direction: column;
+    gap: 14px;
     padding: 18px 16px 40px 16px;
-
-    align-items: stretch;
+    align-items: center;
   }
 
   .about-card {
-    flex: 0 0 82%;
-    max-width: 320px;
-
-    height: 460px;
-
-    position: relative !important;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
 
     display: flex;
     flex-direction: column;
+
+    position: relative !important;
 
     opacity: 1 !important;
     transform: none !important;
@@ -1165,13 +1157,13 @@ color:white;
   }
 
   .about-card h2 {
-    font-size: 19px;
+    font-size: 17px;
     margin-top: 8px;
   }
 
   .about-card p {
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 12px;
+    line-height: 1.35;
   }
 
   /* ===================== */
@@ -1206,14 +1198,13 @@ color:white;
   }
 
   .book-cover {
-    width: 190px;
-    height: 280px;
+    width: 180px;
+    height: 270px;
   }
 
   #openBook:checked ~ .notebook {
     width: 95%;
     max-width: 340px;
-
     flex-direction: column;
     align-items: center;
   }
@@ -1230,7 +1221,7 @@ color:white;
   }
 
   .fact h3 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .fact p {
