@@ -1043,41 +1043,141 @@ color:white;
 
 @media (max-width: 768px) {
 
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
+  /* GENERAL TEXT SCALING */
+  body {
+    overflow-x: hidden;
   }
 
-  .left-side {
-    width: 100%;
-    align-items: center;
-  }
-
-  .right-side {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .right-side img {
-    width: 70%;
-    max-width: 280px;
-    height: auto;
+  /* NAVIGATION */
+  header {
+    padding: 20px;
   }
 
   nav {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
   }
 
-  h1 {
-    font-size: 2.2rem;
+  nav a {
+    font-size: 18px;
   }
 
-  p {
-    font-size: 1rem;
+  /* HERO (HOME PAGE) */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .left-side h1 {
+    font-size: 48px;
+    letter-spacing: 3px;
+  }
+
+  .left-side p {
+    font-size: 18px;
+  }
+
+  .right-side {
+    margin-top: 25px;
+  }
+
+  .right-side img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .right-side::before {
+    width: 260px;
+    height: 260px;
+  }
+
+  /* PAGE TITLES */
+  .page-title,
+  .about-title,
+  .research-title {
+    font-size: 32px;
+    margin-top: 30px;
+  }
+
+  /* CARDS (ABOUT PAGE FIX) */
+  .about-container {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .about-card {
+    position: relative;
+    width: 85%;
+    margin: 20px auto;
+    transform: rotate(0deg) !important;
+  }
+
+  /* RESEARCH GRID */
+  .research-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .interest-card {
+    width: 100%;
+    height: auto;
+  }
+
+  /* BLOG */
+  .blog-post {
+    width: 90%;
+  }
+
+  /* MISC GRID */
+  .moodboard {
+    grid-template-columns: repeat(2, 140px);
+    gap: 15px;
+  }
+
+  .moodbox {
+    height: 140px;
+  }
+
+  .tall {
+    height: 200px;
+  }
+
+  .wide {
+    width: 100%;
+  }
+
+  /* JOURNAL */
+  .journal {
+    width: 90%;
+  }
+
+  /* BOOK PAGE */
+  .book-wrapper {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .book-cover {
+    width: 220px;
+    height: 320px;
+  }
+
+  #openBook:checked ~ .notebook {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .left-page,
+  .right-page {
+    width: 100%;
+    height: auto;
   }
 }
