@@ -1118,64 +1118,97 @@ color:white;
   /* ABOUT (FIXED CLEAN STACK) */
   /* ===================== */
 
-  .about-container {
-    position: static !important;
-    height: auto !important;
+  /* ===================== */
+/* ABOUT PAGE            */
+/* ===================== */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.about-container{
+  position: static !important;
+  height: auto !important;
 
-    gap: 18px;
-    padding: 20px 16px 50px 16px;
-  }
+  display: flex;
+  flex-direction: column;
 
-  .about-card {
-    position: static !important;
-    transform: none !important;
-    animation: none !important;
+  align-items: center;
 
-    width: 100%;
-    max-width: 360px;
-    height: auto !important;
+  gap: 18px;
 
-    background: white;
+  padding: 20px 16px 50px;
+}
 
-    border-radius: 18px;
-    padding: 14px;
+.about-card{
 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  position: static !important;
 
-    display: flex;
-    flex-direction: column;
-  }
+  top: auto !important;
+  left: auto !important;
 
-  .about-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 10px;
-  }
+  transform: none !important;
+  animation: none !important;
 
-  .about-card h2 {
-    font-size: 18px;
-    margin-bottom: 6px;
-    color: #03152d;
-  }
+  width: 95%;
+  max-width: 360px;
 
-  .about-card p {
-    font-size: 13px;
-    line-height: 1.4;
-    color: #444;
-  }
+  height: auto !important;
 
-  /* REMOVE ALL SCATTER EFFECTS */
-  .card1, .card2, .card3, .card4 {
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-  }
+  padding: 12px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  gap: 12px;
+}
+
+/* tiny picture */
+
+.about-card img{
+
+  width: 75px;
+  height: 75px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  margin: 0;
+
+  flex-shrink: 0;
+}
+
+/* smaller title */
+
+.about-card h2{
+
+  font-size: 16px;
+
+  margin: 0 0 6px 0;
+}
+
+/* smaller paragraph */
+
+.about-card p{
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  margin: 0;
+}
+
+/* REMOVE desktop scatter positions */
+
+.card1,
+.card2,
+.card3,
+.card4{
+
+  top: auto !important;
+
+  left: auto !important;
+
+  transform: none !important;
+}
 
   /* ===================== */
   /* RESEARCH              */
