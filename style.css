@@ -1052,8 +1052,8 @@ color:white;
   /* ===================== */
 
   html, body {
-    overflow-x: hidden;
     width: 100%;
+    overflow-x: hidden;
   }
 
   header {
@@ -1071,7 +1071,7 @@ color:white;
   }
 
   /* ===================== */
-  /* HERO (HOME PAGE)      */
+  /* HOME PAGE             */
   /* ===================== */
 
   .hero {
@@ -1090,8 +1090,8 @@ color:white;
 
   .left-side h1 {
     font-size: 42px;
-    letter-spacing: 2px;
     line-height: 1.05;
+    letter-spacing: 2px;
   }
 
   .left-side p {
@@ -1113,15 +1113,15 @@ color:white;
     font-size: 15px;
   }
 
-  /* IMAGE */
+  /* 👇 BIGGER PROFILE IMAGE (YOUR REQUEST) */
   .right-side img {
-    width: 220px;
-    height: 220px;
+    width: 270px;
+    height: 270px;
   }
 
   .right-side::before {
-    width: 240px;
-    height: 240px;
+    width: 290px;
+    height: 290px;
   }
 
   /* ===================== */
@@ -1132,50 +1132,36 @@ color:white;
   .about-title,
   .research-title {
     font-size: 30px;
-    margin-top: 30px;
   }
 
   /* ===================== */
-  /* ABOUT (STACK CARDS)   */
+  /* ABOUT (HORIZONTAL SCROLL) */
   /* ===================== */
 
   .about-container {
     height: auto;
-    padding: 60px 0;
-    position: relative;
+    padding: 60px 20px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .about-card {
-    position: absolute;
-    width: 88%;
-    max-width: 340px;
-    opacity: 0;
-    transform: scale(0.92);
-    transition: all 0.4s ease;
-    animation: none;
-  }
+    position: relative !important;
+    flex: 0 0 85%;
+    max-width: 320px;
 
-  .about-card.active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 5;
-  }
+    transform: none !important;
+    animation: none !important;
 
-  /* arrows */
-  .about-nav {
-    position: absolute;
-    bottom: -60px;
-    display: flex;
-    gap: 25px;
-  }
-
-  .about-nav button {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.4);
-    color: white;
-    font-size: 18px;
-    padding: 10px 14px;
-    border-radius: 12px;
+    scroll-snap-align: center;
   }
 
   /* ===================== */
@@ -1201,7 +1187,63 @@ color:white;
   }
 
   /* ===================== */
-  /* MISC (LIST STYLE)     */
+  /* MISC (BOOK FIXED)     */
+  /* ===================== */
+
+  .book-wrapper {
+    min-height: 100vh;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .book-cover {
+    width: 200px;
+    height: 300px;
+  }
+
+  #openBook:checked ~ .notebook {
+    width: 95%;
+    max-width: 360px;
+
+    flex-direction: column;
+    align-items: center;
+
+    transform: translateX(-50%);
+  }
+
+  .left-page,
+  .right-page {
+    width: 100%;
+    height: auto;
+
+    padding: 18px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+  .fact h3 {
+    font-size: 18px;
+  }
+
+  .fact p {
+    font-size: 14px;
+  }
+
+  .left-page {
+    border-radius: 18px 18px 0 0;
+    border-right: none;
+    border-bottom: 2px solid #d7d7d7;
+  }
+
+  .right-page {
+    border-radius: 0 0 18px 18px;
+  }
+
+  /* ===================== */
+  /* MISC GRID (if used)   */
   /* ===================== */
 
   .moodboard {
@@ -1216,7 +1258,6 @@ color:white;
     width: 90%;
     max-width: 320px;
     height: 120px;
-    border-radius: 16px;
   }
 
   .tall {
@@ -1227,34 +1268,4 @@ color:white;
     width: 90%;
   }
 
-  /* ===================== */
-  /* BOOK (NO OVERFLOW)    */
-  /* ===================== */
-
-  .book-wrapper {
-    min-height: 100vh;
-    height: auto;
-    padding: 60px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .book-cover {
-    width: 200px;
-    height: 300px;
-  }
-
-  #openBook:checked ~ .notebook {
-    width: 92%;
-    max-width: 360px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left-page,
-  .right-page {
-    width: 100%;
-    height: auto;
-  }
 }
