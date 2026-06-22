@@ -1047,10 +1047,6 @@ color:white;
 
 @media (max-width: 768px) {
 
-  /* ===================== */
-  /* GLOBAL FIX            */
-  /* ===================== */
-
   html, body {
     width: 100%;
     overflow-x: hidden;
@@ -1079,6 +1075,7 @@ color:white;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
     padding: 28px 16px 40px 16px;
     height: auto;
     gap: 16px;
@@ -1094,19 +1091,14 @@ color:white;
     margin-top: 6px;
   }
 
-  .contact-info {
-    justify-content: center;
-    margin-top: 12px;
-  }
-
   .right-side img {
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
   }
 
   .right-side::before {
-    width: 270px;
-    height: 270px;
+    width: 260px;
+    height: 260px;
   }
 
   /* ===================== */
@@ -1123,48 +1115,66 @@ color:white;
   }
 
   /* ===================== */
-  /* ABOUT PAGE (FIXED)    */
+  /* ABOUT (FIXED CLEAN STACK) */
   /* ===================== */
 
   .about-container {
+    position: static !important;
+    height: auto !important;
+
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 18px 16px 40px 16px;
     align-items: center;
+
+    gap: 18px;
+    padding: 20px 16px 50px 16px;
   }
 
   .about-card {
-    width: 100%;
-    max-width: 340px;
-    height: auto;
-
-    display: flex;
-    flex-direction: column;
-
-    position: relative !important;
-
-    opacity: 1 !important;
+    position: static !important;
     transform: none !important;
     animation: none !important;
 
-    overflow: hidden;
+    width: 100%;
+    max-width: 360px;
+    height: auto !important;
+
+    background: white;
+
+    border-radius: 18px;
+    padding: 14px;
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
   }
 
   .about-card img {
     width: 100%;
-    height: 170px;
+    height: 150px;
     object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
   }
 
   .about-card h2 {
-    font-size: 17px;
-    margin-top: 8px;
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #03152d;
   }
 
   .about-card p {
-    font-size: 12px;
-    line-height: 1.35;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #444;
+  }
+
+  /* REMOVE ALL SCATTER EFFECTS */
+  .card1, .card2, .card3, .card4 {
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
   }
 
   /* ===================== */
@@ -1190,7 +1200,7 @@ color:white;
   }
 
   /* ===================== */
-  /* MISC (BOOK FIXED)     */
+  /* MISC                  */
   /* ===================== */
 
   .book-wrapper {
@@ -1214,19 +1224,8 @@ color:white;
   .right-page {
     width: 100%;
     height: auto;
-
     padding: 16px;
-
     border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-  }
-
-  .fact h3 {
-    font-size: 15px;
-  }
-
-  .fact p {
-    font-size: 13px;
   }
 
 }
