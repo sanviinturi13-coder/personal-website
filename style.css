@@ -1044,6 +1044,99 @@ transition:.3s ease;
 color:white;
 
 }
+
+@media (max-width: 768px) {
+
+  /* ===================== */
+  /* GLOBAL FIXES          */
+  /* ===================== */
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 18px 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  /* ===================== */
+  /* HOME PAGE             */
+  /* ===================== */
+
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    height: auto;
+    gap: 22px;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .left-side h1 {
+    font-size: 42px;
+    line-height: 1.05;
+    letter-spacing: 2px;
+  }
+
+  .left-side p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  /* EMAIL CENTER FIX */
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .contact-info a {
+    font-size: 15px;
+  }
+
+  /* 👇 BIGGER PROFILE IMAGE (YOUR REQUEST) */
+  .right-side img {
+    width: 270px;
+    height: 270px;
+  }
+
+  .right-side::before {
+    width: 290px;
+    height: 290px;
+  }
+
+  /* ===================== */
+  /* TITLES                */
+  /* ===================== */
+
+  .page-title,
+  .about-title,
+  .research-title {
+    font-size: 30px;
+  }
+
+  /* ===================== */
+  /* ABOUT (HORIZONTAL SCROLL) */
+  /* ===================== */
 @media (max-width: 768px) {
 
   /* ===================== */
@@ -1062,11 +1155,11 @@ color:white;
   nav {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
   }
 
   nav a {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   /* ===================== */
@@ -1074,28 +1167,41 @@ color:white;
   /* ===================== */
 
   .hero {
-    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     text-align: center;
-    padding: 28px 16px 40px 16px;
+
+    padding: 20px 18px 40px 18px;  /* 🔥 moved UP */
     height: auto;
-    gap: 16px;
+    gap: 18px;
+  }
+
+  .left-side {
+    width: 100%;
   }
 
   .left-side h1 {
-    font-size: 36px;
-    line-height: 1.1;
+    font-size: 40px;
+    line-height: 1.05;
   }
 
   .left-side p {
-    font-size: 14px;
-    margin-top: 6px;
+    font-size: 15px;
+    margin-top: 8px;
   }
 
   .contact-info {
+    display: flex;
     justify-content: center;
-    margin-top: 12px;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .contact-info a {
+    font-size: 14px;
   }
 
   .right-side img {
@@ -1114,32 +1220,60 @@ color:white;
 
   .page-title,
   .about-title,
-  .research-title,
-  .misc-title {
-    font-size: 22px;
-    margin-top: 16px;
-    text-align: center;
+  .research-title {
+    font-size: 28px;
+    margin-top: 18px; /* 🔥 closer to top */
   }
 
   /* ===================== */
-  /* ABOUT PAGE (FIXED)    */
+  /* ABOUT (FIXED CAROUSEL) */
   /* ===================== */
 
   .about-container {
+    position: relative;
+
+    height: auto;
+    padding: 10px 18px 80px 18px; /* 🔥 MUCH closer to heading */
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 14px;
-    padding: 18px 16px 40px 16px;
-    align-items: center;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    align-items: flex-start;
+  }
+
+  /* swipe label MUST be visible */
+  .about-container::before {
+    content: "swipe →";
+    position: absolute;
+
+    top: -6px; /* 🔥 now visible */
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+
+    background: rgba(0,0,0,0.25);
+    padding: 4px 10px;
+    border-radius: 999px;
+
+    z-index: 999;
+    pointer-events: none;
   }
 
   .about-card {
-    width: 100%;
+    flex: 0 0 85%;
     max-width: 340px;
-    height: auto;
 
-    display: flex;
-    flex-direction: column;
+    height: 450px;   /* uniform height */
+    margin-top: 0 !important;
 
     position: relative !important;
 
@@ -1147,23 +1281,40 @@ color:white;
     transform: none !important;
     animation: none !important;
 
+    scroll-snap-align: center;
+
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
   }
 
   .about-card img {
+    height: 180px;
     width: 100%;
-    height: 170px;
     object-fit: cover;
   }
 
   .about-card h2 {
-    font-size: 17px;
-    margin-top: 8px;
+    font-size: 22px;
+    margin-top: 10px;
   }
 
   .about-card p {
-    font-size: 12px;
-    line-height: 1.35;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* subtle right fade hint */
+  .about-container::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0,0,0,0.2), transparent);
+    pointer-events: none;
   }
 
   /* ===================== */
@@ -1172,8 +1323,8 @@ color:white;
 
   .research-container {
     grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 0 14px;
+    padding: 0 16px;
+    gap: 16px;
   }
 
   .interest-card {
@@ -1195,16 +1346,20 @@ color:white;
   .book-wrapper {
     min-height: 100vh;
     padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .book-cover {
-    width: 180px;
-    height: 270px;
+    width: 190px;
+    height: 290px;
   }
 
   #openBook:checked ~ .notebook {
     width: 95%;
     max-width: 340px;
+
     flex-direction: column;
     align-items: center;
   }
@@ -1215,17 +1370,17 @@ color:white;
     height: auto;
 
     padding: 16px;
-
-    border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
   }
 
   .fact h3 {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .fact p {
     font-size: 13px;
   }
 
+}
+  
 }
